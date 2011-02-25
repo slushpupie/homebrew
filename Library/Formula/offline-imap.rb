@@ -1,9 +1,9 @@
 require 'formula'
 
 class OfflineImap < Formula
-  url "https://github.com/downloads/rue/offlineimap/offlineimap-6.2.0.tar.gz"
-  homepage "https://github.com/rue/offlineimap"
-  md5 "919ad6f71b8437ad0a08a5fdeae9cb67"
+  url "https://download.github.com/nicolas33-offlineimap-v6.3.2-0-g374dea8.tar.gz"
+  homepage "https://github.com/nicolas33/offlineimap"
+  md5 "73ef6b4685d7651261f9591949f681be"
 
   def install
     libexec.install 'bin/offlineimap' => 'offlineimap.py'
