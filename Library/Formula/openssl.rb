@@ -6,7 +6,8 @@ class Openssl <Formula
   homepage 'http://www.openssl.org'
   md5 '40b6ea380cc8a5bf9734c2f8bf7e701e'
 
-  keg_only :provided_by_osx
+  keg_only :provided_by_osx,
+            "OpenSSL provided by Leopard is too old for newer software to link against."
 
   def options
     [["--universal", "Build a universal binary."]]
