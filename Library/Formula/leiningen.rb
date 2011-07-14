@@ -1,10 +1,10 @@
 require 'formula'
 
 class Leiningen < Formula
-  url 'http://github.com/technomancy/leiningen/tarball/1.5.0'
+  url 'http://github.com/technomancy/leiningen/tarball/1.6.0'
   head 'http://github.com/technomancy/leiningen.git', :using => :git
   homepage 'http://github.com/technomancy/leiningen'
-  md5 '556aa625eda7bd57b15c44046e141eaa'
+  md5 '0e418df7de6a99b09e8b476f24059e2a'
 
   def install
     bin.install "bin/lein"
