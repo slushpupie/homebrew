@@ -37,6 +37,9 @@ class Git < Formula
       s.remove_make_var! %w{CFLAGS LDFLAGS}
     end
 
+    ENV['OPENSSLDIR']=HOMEBREW_PREFIX if ARGV.include? '--with-homebrew-openssl'
+
+    system "./configure"
     system "make", "prefix=#{prefix}", "install"
 
     # Install the Git bash completion file.
