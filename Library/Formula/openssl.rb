@@ -11,17 +11,13 @@ class Openssl <Formula
 
   def install
     system "./config", "--prefix=#{prefix}",
-                       "--openssldir=#{etc}",
+                       "--openssldir=#{etc}/openssl",
                        "zlib-dynamic", "shared"
 
-    inreplace 'Makefile' do |s|
-      s.change_make_var! 'MANDIR', man
-    end
-
-    ENV.j1 # Parallel compilation fails
+    ENV.deparallelize # Parallel compilation fails
     system "make"
     system "make test"
-    system "make install"
+    system "make install MANDIR=#{man} MANSUFFIX=ssl"
   end
 
   def caveats; <<-EOS.undent
